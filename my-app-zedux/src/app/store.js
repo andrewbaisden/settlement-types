@@ -7,16 +7,6 @@ export const countAtom = atom('count', () => {
     decrement: () => store.setState((state) => state - 1),
     increment: () => store.setState((state) => state + 1),
     incrementByAmount: (action) => store.setState((state) => (state += action)),
-    incrementOdd: (action) => {
-      if (store.getState() % 2 === 1) {
-        return store.setState((state) => state + action);
-      }
-    },
-    incrementEven: (action) => {
-      if (store.getState() % 2 === 0) {
-        return store.setState((state) => state + action);
-      }
-    },
   });
 });
 

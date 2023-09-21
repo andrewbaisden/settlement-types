@@ -10,6 +10,7 @@
 
 .settlements {
   display: flex;
+  background-color: #ffffff;
   flex-flow: column nowrap;
   align-items: center;
   margin: 2rem auto;
@@ -24,12 +25,17 @@
   margin-top: 2rem;
 }
 
+.settlementempty {
+  text-align: center;
+}
+
 .value {
   font-size: 5rem;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
   margin-top: 0.5rem;
   font-family: 'Courier New', Courier, monospace;
+  color: #ffffff;
 }
 
 .button {
@@ -40,10 +46,10 @@
   padding-right: 1.2rem;
   outline: none;
   border: 2px solid transparent;
-  color: rgb(96 165 250);
+  color: rgb(240 253 244);
   padding-bottom: 0.4rem;
   cursor: pointer;
-  background-color: rgba(76, 106, 182, 0.1);
+  background-color: rgb(22 101 52);
   transition: all 0.15s;
 }
 
@@ -57,7 +63,7 @@
 
 .button:hover,
 .button:focus {
-  background-color: rgb(59 130 246);
+  background-color: rgb(34 197 94);
   color: #ffffff;
 }
 
@@ -66,5 +72,10 @@
 }
 
 .legend {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 50rem;
   padding: 0.5rem;
+  border: 0.1rem solid black;
+  background: rgb(236 252 203);
 }

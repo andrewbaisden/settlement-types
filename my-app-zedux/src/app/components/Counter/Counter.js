@@ -6,10 +6,8 @@ import { countAtom, settlementAtom } from '../../store';
 import styles from './counter.module.css';
 
 export default function Counter() {
-  const [
-    count,
-    { decrement, increment, incrementByAmount, incrementOdd, incrementEven },
-  ] = useAtomState(countAtom);
+  const [count, { decrement, increment, incrementByAmount }] =
+    useAtomState(countAtom);
   const [settlement] = useAtomState(settlementAtom);
   const [incrementAmount, setIncrementAmount] = useState(2);
   const [imgSize] = useState(200);
@@ -78,6 +76,24 @@ export default function Counter() {
     <div className={styles.container}>
       <div className={styles.settlements}>
         <Settlements />
+        {count <= 0 ? (
+          <div className={styles.settlementempty}>
+            <h1>Empty Land</h1>
+            <h2>Size: 0</h2>
+            <p>
+              Add some people to see settlement sizes there is nothing to see
+              here just empty land :)
+            </p>
+            <Image
+              src="https://res.cloudinary.com/d74fh3kw/image/upload/v1695310253/empty-land_ralhqp.jpg"
+              height={imgSize}
+              width={imgSize}
+              alt="Empty Land"
+            />
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
       <div className={styles.counter}>
         <button
@@ -109,21 +125,9 @@ export default function Counter() {
         >
           Add People
         </button>
-        <button
-          className={styles.button}
-          onClick={() => incrementOdd(incrementAmount)}
-        >
-          Add If Odd
-        </button>
-        <button
-          className={styles.button}
-          onClick={() => incrementEven(incrementAmount)}
-        >
-          Add If Even
-        </button>
       </div>
       <div className={styles.legend}>
-        <p>Settlement Sizes by people (example)</p>
+        <h1>Settlement Sizes by people (example)</h1>
         <p>Add X numbers of people to see the differences in the settlement.</p>
         <ul>
           <li>Hamlet: 1 - 100</li>
